@@ -1,4 +1,4 @@
-package com.example.java;
+package com.example.lamda;
 
 import java.util.function.Predicate;
 
