@@ -44,7 +44,8 @@ public class CollectSample  {
         //    }
         // *** 기본 분할
         Map<Boolean, List<Student>> studBySex = studentStream.collect(partitioningBy(Student::isMale));
-        Map<Boolean, List<Student>> studBySex2 = studentStream2.collect(partitioningBy(s -> s.isMale()));
+        //Map<Boolean, List<Student>> studBySex2 = studentStream2.collect(partitioningBy(s -> s.isMale()));
+        Map<Boolean, List<Student>> studBySex3 = studentStream2.collect(partitioningBy(Student::isMale, toList()));
 
         List<Student> maleStudent = studBySex.get(true);
         List<Student> femaleStudent = studBySex.get(false);
